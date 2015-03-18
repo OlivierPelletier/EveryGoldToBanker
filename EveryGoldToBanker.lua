@@ -1,5 +1,5 @@
 ﻿-- Author      : Olivier Pelletier
--- Version : 19/09/2012
+-- Version : 18/03/2015
 
 local AddOns_name = "EveryGoldToBanker";
 

@@ -44,7 +44,7 @@
 				</Backdrop>
 				<Layers>
 					<Layer level="OVERLAY">
-						<FontString name="Title" inherits="GameFontNormal" text="EveryGoldToBanker v1.0.5">
+						<FontString name="Title" inherits="GameFontNormal" text="EveryGoldToBanker">
 							<Size>
 								<AbsDimension x="290" y="48" />
 							</Size>

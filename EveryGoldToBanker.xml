@@ -1,0 +1,478 @@
+<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="EveryGoldToBanker.lua" />
+	<Frame name="EveryGoldToBankerCalculator" parent="UIParent" frameStrata="DIALOG" toplevel="true" movable="true" enableMouse="true">
+		<Size>
+			<AbsDimension x="290" y="234" />
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER">
+				<Offset x="-25" y="1" />
+			</Anchor>
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Gold-Border">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="42" bottom="11" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		<Frames>
+			<MessageFrame name="TitleFrame" parent="">
+				<FontString inherits="ErrorFont" justifyH="CENTER" />
+				<Size>
+					<AbsDimension x="290" y="48" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="0" y="0" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Gold-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Gold-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="Title" inherits="GameFontNormal" text="EveryGoldToBanker">
+							<Size>
+								<AbsDimension x="290" y="48" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<FontHeight>
+								<AbsValue val="13" />
+							</FontHeight>
+							<Color r="1" g="1" b="1" />
+						</FontString>
+					</Layer>
+				</Layers>
+			</MessageFrame>
+			<MessageFrame name="AmountFrame" parent="">
+				<FontString inherits="ErrorFont" justifyH="CENTER" />
+				<Size>
+					<AbsDimension x="145" y="60" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="14" y="-41" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="Amount" inherits="GameFontNormal" text="Amount desired to keep:">
+							<Size>
+								<AbsDimension x="145" y="60" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Color r="1" g="1" b="1" />
+						</FontString>
+					</Layer>
+				</Layers>
+			</MessageFrame>
+			<MessageFrame name="ResponseFrame" parent="">
+				<FontString inherits="ErrorFont" justifyH="CENTER" />
+				<Size>
+					<AbsDimension x="220" y="50" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="34" y="-102" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="Response" inherits="GameFontNormal" text="You didn't enter a value yet.">
+							<Size>
+								<AbsDimension x="220" y="50" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Color r="1" g="1" b="1" />
+						</FontString>
+					</Layer>
+				</Layers>
+			</MessageFrame>
+			<MessageFrame name="ReceiverFrame" parent="">
+				<FontString inherits="ErrorFont" justifyH="CENTER" />
+				<Size>
+					<AbsDimension x="145" y="45" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="14" y="-151" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="Receiver" inherits="GameFontNormal" text="Receiver name:">
+							<Size>
+								<AbsDimension x="145" y="45" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Color r="1" g="1" b="1" />
+						</FontString>
+					</Layer>
+				</Layers>
+			</MessageFrame>
+			<MessageFrame name="GoldIndicatorFrame" parent="">
+				<FontString inherits="ErrorFont" justifyH="CENTER" />
+				<Size>
+					<AbsDimension x="15" y="15" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="252" y="-63" />
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="GoldIndicator" inherits="GameFontNormal" text="g.">
+							<Size>
+								<AbsDimension x="15" y="15" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="0" y="0" />
+								</Anchor>
+							</Anchors>
+							<Shadow>
+								<Offset>
+									<AbsDimension x="1" y="-1" />
+								</Offset>
+							<Color r="0" g="0" b="0" a="0" />
+							</Shadow>
+						</FontString>
+					</Layer>
+				</Layers>
+			</MessageFrame>
+			<EditBox name="AmountEditBox" inherits="InputBoxTemplate" toplevel="true" numeric="true" autoFocus="false">
+				<Size>
+					<AbsDimension x="75" y="30" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="175" y="-55" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnterPressed function="CheckButton_OnClick" />
+				</Scripts>
+			</EditBox>
+			<EditBox name="ReceiverEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
+				<Size>
+					<AbsDimension x="90" y="30" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="175" y="-158" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnterPressed>
+						self:ClearFocus();
+					</OnEnterPressed>
+				</Scripts>
+			</EditBox>			
+			<Button name="CheckButton" inherits="UIPanelButtonTemplate" toplevel="true" text="Check">
+				<Size>
+					<AbsDimension x="55" y="25" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="187" y="-81" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick function="CheckButton_OnClick" />
+				</Scripts>
+			</Button>
+			<Button name="SendButton" inherits="UIPanelButtonTemplate" toplevel="true" text="Send">
+				<Size>
+					<AbsDimension x="50" y="25" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="121" y="-197" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick function="SendButton_OnClick" />
+				</Scripts>
+			</Button>
+			<Button name="SettingButton" inherits="UIPanelButtonTemplate" toplevel="true" text="Setting">
+				<Size>
+					<AbsDimension x="60" y="25" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="205" y="-197" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick function="SettingButton_OnClick" />
+				</Scripts>
+			</Button>
+			<Button name="MinimizeButton" inherits="" toplevel="true" text="x">
+				<Size>
+					<AbsDimension x="18" y="19" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="261" y="-10" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick function="ToggleEGTBFrame" />
+				</Scripts>
+				<NormalTexture inherits="UIPanelButtonUpTexture" file="Interface\BUTTONS\UI-Panel-HideButton-Up">
+					<TexCoords left="0" right="1" top="0" bottom="1" />
+				</NormalTexture>
+				<PushedTexture inherits="UIPanelButtonDownTexture" file="Interface\BUTTONS\UI-Panel-HideButton-Down">
+					<TexCoords left="0" right="1" top="0" bottom="1" />
+				</PushedTexture>
+				<DisabledTexture inherits="UIPanelButtonDisabledTexture" file="Interface\BUTTONS\UI-Panel-HideButton-Disabled">
+					<TexCoords left="0" right="1" top="0" bottom="1" />
+				</DisabledTexture>
+				<HighlightTexture inherits="UIPanelButtonHighlightTexture" file="Interface\BUTTONS\UI-Panel-Button-Highlight" alphaMode="ADD">
+					<TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+				</HighlightTexture>
+			</Button>
+			<Frame name="SettingFrame" parent="" frameStrata="HIGH" toplevel="true" movable="true" enableMouse="true">
+				<Size>
+					<AbsDimension x="260" y="134" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="15" y="-219" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Gold-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Frames>
+					<MessageFrame name="DefaultReceiverFrame" parent="">
+						<FontString inherits="ErrorFont" justifyH="CENTER" />
+						<Size>
+							<AbsDimension x="130" y="45" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="12" y="-12" />
+							</Anchor>
+						</Anchors>
+						<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+							<BackgroundInsets>
+								<AbsInset left="11" right="12" top="12" bottom="11" />
+							</BackgroundInsets>
+							<TileSize>
+								<AbsValue val="32" />
+							</TileSize>
+							<EdgeSize>
+								<AbsValue val="32" />
+							</EdgeSize>
+						</Backdrop>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="DefaultReceiver" inherits="GameFontNormal" text="Default receiver:">
+									<Size>
+										<AbsDimension x="130" y="45" />
+									</Size>
+									<Anchors>
+										<Anchor point="TOPLEFT">
+											<Offset x="0" y="0" />
+										</Anchor>
+									</Anchors>
+									<Color r="1" g="1" b="1" />
+								</FontString>
+							</Layer>
+						</Layers>
+					</MessageFrame>
+					<MessageFrame name="DefaultAmountFrame" parent="">
+						<FontString inherits="ErrorFont" justifyH="CENTER" />
+						<Size>
+							<AbsDimension x="130" y="45" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="12" y="-54" />
+							</Anchor>
+						</Anchors>
+						<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+							<BackgroundInsets>
+								<AbsInset left="11" right="12" top="12" bottom="11" />
+							</BackgroundInsets>
+							<TileSize>
+								<AbsValue val="32" />
+							</TileSize>
+							<EdgeSize>
+								<AbsValue val="32" />
+							</EdgeSize>
+						</Backdrop>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="DefaultAmount" inherits="GameFontNormal" text="Default amount:">
+									<Size>
+										<AbsDimension x="130" y="45" />
+									</Size>
+									<Anchors>
+										<Anchor point="TOPLEFT">
+											<Offset x="0" y="0" />
+										</Anchor>
+									</Anchors>
+									<Color r="1" g="1" b="1" />
+								</FontString>
+							</Layer>
+						</Layers>
+					</MessageFrame>
+					<MessageFrame name="GoldIndicatorFrame2" parent="">
+						<FontString inherits="ErrorFont" justifyH="CENTER" />
+						<Size>
+							<AbsDimension x="15" y="15" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="225" y="-65" />
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="GoldIndicator2" inherits="GameFontNormal" text="g.">
+									<Size>
+										<AbsDimension x="15" y="15" />
+									</Size>
+									<Anchors>
+										<Anchor point="TOPLEFT">
+											<Offset x="0" y="0" />
+										</Anchor>
+									</Anchors>
+									<Shadow>
+										<Offset>
+											<AbsDimension x="1" y="-1" />
+										</Offset>
+									<Color r="0" g="0" b="0" a="0" />
+									</Shadow>
+								</FontString>
+							</Layer>
+						</Layers>
+					</MessageFrame>
+					<EditBox name="DefaultReceiverEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
+						<Size>
+							<AbsDimension x="90" y="30" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="147" y="-18" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnterPressed>
+								self:ClearFocus();
+								DefaultAmountEditBox:SetFocus();
+							</OnEnterPressed>
+						</Scripts>
+					</EditBox>
+					<EditBox name="DefaultAmountEditBox" inherits="InputBoxTemplate" toplevel="true" numeric="true" autoFocus="false">
+						<Size>
+							<AbsDimension x="75" y="30" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="148" y="-57" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnterPressed function="DoneSettingButton_OnClick" />
+						</Scripts>
+					</EditBox>
+					<Button name="DoneSettingButton" inherits="UIPanelButtonTemplate" toplevel="true" text="Done">
+						<Size>
+							<AbsDimension x="50" y="25" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="105" y="-97" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick function="DoneSettingButton_OnClick" />
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad function="EveryGoldToBankerCalculator_OnLoad" />
+			<OnEvent>
+				EveryGoldToBankerCalculator_OnEvent(self, event, ...)
+			</OnEvent>
+			<OnDragStart function="EveryGoldToBankerCalculator_OnDragStart" />
+			<OnDragStop function="EveryGoldToBankerCalculator_OnDragStop" />
+		</Scripts>
+	</Frame>
+</Ui>

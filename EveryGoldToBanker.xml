@@ -1,6 +1,11 @@
 <Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="EveryGoldToBanker.lua" />
-	<Frame name="EveryGoldToBankerCalculator" parent="UIParent" frameStrata="DIALOG" toplevel="true" movable="true" enableMouse="true">
+	<Frame name="EveryGoldToBankerCalculator" parent="UIParent" frameStrata="DIALOG" toplevel="true" movable="true" enableMouse="true" inherits="BackdropTemplate">
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
+			<KeyValue key="backdropColor" value="GOLD" type="global"/>
+			<KeyValue key="backdropBorderColor" value="GOLD" type="global"/>
+		</KeyValues>
 		<Size>
 			<AbsDimension x="290" y="234" />
 		</Size>
@@ -21,7 +26,12 @@
 			</EdgeSize>
 		</Backdrop>
 		<Frames>
-			<MessageFrame name="TitleFrame" parent="">
+			<MessageFrame name="TitleFrame" parent="" inherits="BackdropTemplate">
+				<KeyValues>
+					<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
+					<KeyValue key="backdropColor" value="GOLD" type="global"/>
+					<KeyValue key="backdropBorderColor" value="GOLD" type="global"/>
+				</KeyValues>
 				<FontString inherits="ErrorFont" justifyH="CENTER" />
 				<Size>
 					<AbsDimension x="290" y="48" />
@@ -61,7 +71,12 @@
 					</Layer>
 				</Layers>
 			</MessageFrame>
-			<MessageFrame name="AmountFrame" parent="">
+			<MessageFrame name="AmountFrame" parent="" inherits="BackdropTemplate">
+				<KeyValues>
+					<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
+					<KeyValue key="backdropColor" value="BLACK" type="global"/>
+					<KeyValue key="backdropBorderColor" value="GOLD" type="global"/>
+				</KeyValues>
 				<FontString inherits="ErrorFont" justifyH="CENTER" />
 				<Size>
 					<AbsDimension x="145" y="60" />
@@ -98,7 +113,12 @@
 					</Layer>
 				</Layers>
 			</MessageFrame>
-			<MessageFrame name="ResponseFrame" parent="">
+			<MessageFrame name="ResponseFrame" parent="" inherits="BackdropTemplate">
+				<KeyValues>
+					<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
+					<KeyValue key="backdropColor" value="BLACK" type="global"/>
+					<KeyValue key="backdropBorderColor" value="GOLD" type="global"/>
+				</KeyValues>
 				<FontString inherits="ErrorFont" justifyH="CENTER" />
 				<Size>
 					<AbsDimension x="220" y="50" />
@@ -135,7 +155,12 @@
 					</Layer>
 				</Layers>
 			</MessageFrame>
-			<MessageFrame name="ReceiverFrame" parent="">
+			<MessageFrame name="ReceiverFrame" parent="" inherits="BackdropTemplate">
+				<KeyValues>
+					<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
+					<KeyValue key="backdropColor" value="BLACK" type="global"/>
+					<KeyValue key="backdropBorderColor" value="GOLD" type="global"/>
+				</KeyValues>
 				<FontString inherits="ErrorFont" justifyH="CENTER" />
 				<Size>
 					<AbsDimension x="145" y="45" />
@@ -197,7 +222,7 @@
 								<Offset>
 									<AbsDimension x="1" y="-1" />
 								</Offset>
-							<Color r="0" g="0" b="0" a="0" />
+								<Color r="0" g="0" b="0" a="0" />
 							</Shadow>
 						</FontString>
 					</Layer>
@@ -230,7 +255,7 @@
 						self:ClearFocus();
 					</OnEnterPressed>
 				</Scripts>
-			</EditBox>			
+			</EditBox>
 			<Button name="CheckButton" inherits="UIPanelButtonTemplate" toplevel="true" text="Check">
 				<Size>
 					<AbsDimension x="55" y="25" />
@@ -295,7 +320,12 @@
 					<TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
 				</HighlightTexture>
 			</Button>
-			<Frame name="SettingFrame" parent="" frameStrata="HIGH" toplevel="true" movable="true" enableMouse="true">
+			<Frame name="SettingFrame" parent="" frameStrata="HIGH" toplevel="true" movable="true" enableMouse="true" inherits="BackdropTemplate">
+				<KeyValues>
+					<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
+					<KeyValue key="backdropColor" value="BLACK" type="global"/>
+					<KeyValue key="backdropBorderColor" value="GOLD" type="global"/>
+				</KeyValues>
 				<Size>
 					<AbsDimension x="260" y="134" />
 				</Size>
@@ -316,7 +346,12 @@
 					</EdgeSize>
 				</Backdrop>
 				<Frames>
-					<MessageFrame name="DefaultReceiverFrame" parent="">
+					<MessageFrame name="DefaultReceiverFrame" parent="" inherits="BackdropTemplate">
+						<KeyValues>
+							<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
+							<KeyValue key="backdropColor" value="BLACK" type="global"/>
+							<KeyValue key="backdropBorderColor" value="GOLD" type="global"/>
+						</KeyValues>
 						<FontString inherits="ErrorFont" justifyH="CENTER" />
 						<Size>
 							<AbsDimension x="130" y="45" />
@@ -353,7 +388,12 @@
 							</Layer>
 						</Layers>
 					</MessageFrame>
-					<MessageFrame name="DefaultAmountFrame" parent="">
+					<MessageFrame name="DefaultAmountFrame" parent="" inherits="BackdropTemplate">
+						<KeyValues>
+							<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
+							<KeyValue key="backdropColor" value="BLACK" type="global"/>
+							<KeyValue key="backdropBorderColor" value="GOLD" type="global"/>
+						</KeyValues>
 						<FontString inherits="ErrorFont" justifyH="CENTER" />
 						<Size>
 							<AbsDimension x="130" y="45" />
@@ -415,7 +455,7 @@
 										<Offset>
 											<AbsDimension x="1" y="-1" />
 										</Offset>
-									<Color r="0" g="0" b="0" a="0" />
+										<Color r="0" g="0" b="0" a="0" />
 									</Shadow>
 								</FontString>
 							</Layer>
@@ -467,7 +507,9 @@
 			</Frame>
 		</Frames>
 		<Scripts>
-			<OnLoad function="EveryGoldToBankerCalculator_OnLoad" />
+			<OnLoad function="EveryGoldToBankerCalculator_OnLoad" inherit="prepend">
+				print("EGTB Loaded!");
+			</OnLoad>
 			<OnEvent>
 				EveryGoldToBankerCalculator_OnEvent(self, event, ...)
 			</OnEvent>

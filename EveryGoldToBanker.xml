@@ -155,7 +155,7 @@
 					</Layer>
 				</Layers>
 			</MessageFrame>
-			<MessageFrame name="ReceiverFrame" parent="" inherits="BackdropTemplate">
+			<MessageFrame name="RecipientFrame" parent="" inherits="BackdropTemplate">
 				<KeyValues>
 					<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
 					<KeyValue key="backdropColor" value="BLACK" type="global"/>
@@ -183,7 +183,7 @@
 				</Backdrop>
 				<Layers>
 					<Layer level="OVERLAY">
-						<FontString name="Receiver" inherits="GameFontNormal" text="Receiver name:">
+						<FontString name="Recipient" inherits="GameFontNormal" text="Recipient name:">
 							<Size>
 								<AbsDimension x="145" y="45" />
 							</Size>
@@ -241,7 +241,7 @@
 					<OnEnterPressed function="CheckButton_OnClick" />
 				</Scripts>
 			</EditBox>
-			<EditBox name="ReceiverEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
+			<EditBox name="RecipientEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
 				<Size>
 					<AbsDimension x="90" y="30" />
 				</Size>
@@ -282,7 +282,7 @@
 					<OnClick function="SendButton_OnClick" />
 				</Scripts>
 			</Button>
-			<Button name="SettingButton" inherits="UIPanelButtonTemplate" toplevel="true" text="Setting">
+			<Button name="SettingButton" inherits="UIPanelButtonTemplate" toplevel="true" text="Settings">
 				<Size>
 					<AbsDimension x="60" y="25" />
 				</Size>
@@ -346,7 +346,7 @@
 					</EdgeSize>
 				</Backdrop>
 				<Frames>
-					<MessageFrame name="DefaultReceiverFrame" parent="" inherits="BackdropTemplate">
+					<MessageFrame name="DefaultRecipientFrame" parent="" inherits="BackdropTemplate">
 						<KeyValues>
 							<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
 							<KeyValue key="backdropColor" value="BLACK" type="global"/>
@@ -374,7 +374,7 @@
 						</Backdrop>
 						<Layers>
 							<Layer level="OVERLAY">
-								<FontString name="DefaultReceiver" inherits="GameFontNormal" text="Default receiver:">
+								<FontString name="DefaultRecipient" inherits="GameFontNormal" text="Default recipient:">
 									<Size>
 										<AbsDimension x="130" y="45" />
 									</Size>
@@ -461,7 +461,7 @@
 							</Layer>
 						</Layers>
 					</MessageFrame>
-					<EditBox name="DefaultReceiverEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
+					<EditBox name="DefaultRecipientEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
 						<Size>
 							<AbsDimension x="90" y="30" />
 						</Size>

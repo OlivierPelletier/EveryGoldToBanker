@@ -1,8 +1,8 @@
 ## Author: Olivier Pelletier.
-## Interface: 90002
+## Interface: 100000
 ## Notes: Useful tool to send money to your banker.
 ## Title: [EGTB] EveryGoldToBanker
-## Version: 1.0.10
+## Version: 1.0.11
 ##SavedVariablesPerCharacter: EVERYGOLDTOBANKER_CONFIG2
 EveryGoldToBanker.xml
 EveryGoldToBanker.lua

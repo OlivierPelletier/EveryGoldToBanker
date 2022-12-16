@@ -1,12 +1,12 @@
 ﻿-- Author      : Olivier Pelletier
--- Version : 11/02/2021
+-- Version : 16/12/2022
 
 local AddOns_name = "EveryGoldToBanker";
 
-RECIPIENT = "No recipient";
+RECEIVER = "No receiver";
 AMOUNT = 100;
 VISIBILITY = "show";
-EVERYGOLDTOBANKER_CONFIG2 = { RECIPIENT,AMOUNT};
+EVERYGOLDTOBANKER_CONFIG2 = {RECEIVER,AMOUNT};
 
 SlashCmdList["EGTB_TOGGLE"] = ToggleEGTBFrame;
 SLASH_EGTB_TOGGLE1 = "/egtb";
@@ -14,8 +14,8 @@ SLASH_EGTB_TOGGLE2 = "/everygoldtobanker";
 
 function EveryGoldToBankerCalculator_OnLoad()
 	EveryGoldToBankerCalculator:RegisterEvent("PLAYER_ENTERING_WORLD");
-	EveryGoldToBankerCalculator:RegisterEvent("MAIL_SHOW");
-	EveryGoldToBankerCalculator:RegisterEvent("MAIL_CLOSED");
+	EveryGoldToBankerCalculator:RegisterEvent("PLAYER_INTERACTION_MANAGER_FRAME_SHOW"); --Mail_Show
+	EveryGoldToBankerCalculator:RegisterEvent("PLAYER_INTERACTION_MANAGER_FRAME_HIDE"); --Mail_Closed
 	EveryGoldToBankerCalculator:RegisterEvent("ADDON_LOADED");
 	EveryGoldToBankerCalculator:RegisterEvent("PLAYER_LOGOUT");	
 	EveryGoldToBankerCalculator:RegisterForDrag("LeftButton");	
@@ -24,18 +24,18 @@ end
 function EveryGoldToBankerCalculator_OnEvent(frame, event, firstArg, secondArg)
 	if (event == "PLAYER_ENTERING_WORLD") then		
 		EveryGoldToBankerCalculator:Hide();
-	elseif (event == "MAIL_SHOW") then
+	elseif (event == "PLAYER_INTERACTION_MANAGER_FRAME_SHOW" and firstArg == Enum.PlayerInteractionType.MailInfo) then
 		if (GameMenuFrame:IsVisible() ~= 1) then
 			if (VISIBILITY == "show") then
 				EveryGoldToBankerCalculator:Show();
 				SettingFrame:Hide();
 				AmountEditBox:SetNumber(EVERYGOLDTOBANKER_CONFIG2[2]);
-				RecipientEditBox:SetText(EVERYGOLDTOBANKER_CONFIG2[1]);
+				ReceiverEditBox:SetText(EVERYGOLDTOBANKER_CONFIG2[1]);
 				DefaultAmountEditBox:SetNumber(EVERYGOLDTOBANKER_CONFIG2[2]);
-				DefaultRecipientEditBox:SetText(EVERYGOLDTOBANKER_CONFIG2[1]);
+				DefaultReceiverEditBox:SetText(EVERYGOLDTOBANKER_CONFIG2[1]);
 			end
 		end		
-	elseif (event == "MAIL_CLOSED") then
+	elseif (event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" and firstArg == Enum.PlayerInteractionType.MailInfo) then
 		EveryGoldToBankerCalculator:Hide();
 	elseif (event == "ADDON_LOADED") then
 		if (firstArg == AddOns_name) then
@@ -72,7 +72,7 @@ function SendButton_OnClick()
 	amountToKeep = AmountEditBox:GetNumber()*10000
 	amountInBag = GetMoney()
 	
-	tempRecipient = RecipientEditBox:GetText()
+	tempReceiver = ReceiverEditBox:GetText()
 	amountToSend = CalculateGoldToSend()
 	amountToSendConverted = Convert(amountToSend)	
 	
@@ -83,11 +83,11 @@ function SendButton_OnClick()
 	elseif (amountToSend < 0) then
 		Response:SetText("You don't have enough money.");
 	else
-		if (tempRecipient ~= "No recipient") then
+		if (tempReceiver ~= "No receiver") then
 			SetSendMailMoney(amountToSend);
-			SendMail(tempRecipient,"EveryMoneyToBanker auto-send system.","");
+			SendMail(tempReceiver,"EveryGoldToBanker auto-send system.","");
 		else
-			Response:SetText("You didn't change the recipient name. CHANGE IT!");
+			Response:SetText("You didn't change the receiver name. CHANGE IT!");
 		end
 	end
 end
@@ -101,12 +101,12 @@ function SettingButton_OnClick()
 end
 
 function DoneSettingButton_OnClick()
-	defaultRecipient = DefaultRecipientEditBox:GetText();
+	defaultReceiver = DefaultReceiverEditBox:GetText();
 	defaultAmount = DefaultAmountEditBox:GetText();
-	EVERYGOLDTOBANKER_CONFIG2 = {defaultRecipient, defaultAmount};
+	EVERYGOLDTOBANKER_CONFIG2 = {defaultReceiver, defaultAmount};
 	
 	AmountEditBox:SetNumber(defaultAmount);
-	RecipientEditBox:SetText(defaultRecipient);
+	ReceiverEditBox:SetText(defaultReceiver);
 	
 	SettingFrame:Hide();
 end

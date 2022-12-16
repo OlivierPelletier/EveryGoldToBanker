@@ -1,4 +1,4 @@
-## Author: Olivier Pelletier.
+## Author: Olivier Pelletier
 ## Interface: 100000
 ## Notes: Useful tool to send money to your banker.
 ## Title: [EGTB] EveryGoldToBanker

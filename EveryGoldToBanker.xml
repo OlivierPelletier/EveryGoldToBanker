@@ -155,7 +155,7 @@
 					</Layer>
 				</Layers>
 			</MessageFrame>
-			<MessageFrame name="RecipientFrame" parent="" inherits="BackdropTemplate">
+			<MessageFrame name="ReceiverFrame" parent="" inherits="BackdropTemplate">
 				<KeyValues>
 					<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
 					<KeyValue key="backdropColor" value="BLACK" type="global"/>
@@ -183,7 +183,7 @@
 				</Backdrop>
 				<Layers>
 					<Layer level="OVERLAY">
-						<FontString name="Recipient" inherits="GameFontNormal" text="Recipient name:">
+						<FontString name="Receiver" inherits="GameFontNormal" text="Receiver name:">
 							<Size>
 								<AbsDimension x="145" y="45" />
 							</Size>
@@ -222,7 +222,7 @@
 								<Offset>
 									<AbsDimension x="1" y="-1" />
 								</Offset>
-								<Color r="0" g="0" b="0" a="0" />
+							<Color r="0" g="0" b="0" a="0" />
 							</Shadow>
 						</FontString>
 					</Layer>
@@ -241,7 +241,7 @@
 					<OnEnterPressed function="CheckButton_OnClick" />
 				</Scripts>
 			</EditBox>
-			<EditBox name="RecipientEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
+			<EditBox name="ReceiverEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
 				<Size>
 					<AbsDimension x="90" y="30" />
 				</Size>
@@ -255,7 +255,7 @@
 						self:ClearFocus();
 					</OnEnterPressed>
 				</Scripts>
-			</EditBox>
+			</EditBox>			
 			<Button name="CheckButton" inherits="UIPanelButtonTemplate" toplevel="true" text="Check">
 				<Size>
 					<AbsDimension x="55" y="25" />
@@ -282,7 +282,7 @@
 					<OnClick function="SendButton_OnClick" />
 				</Scripts>
 			</Button>
-			<Button name="SettingButton" inherits="UIPanelButtonTemplate" toplevel="true" text="Settings">
+			<Button name="SettingButton" inherits="UIPanelButtonTemplate" toplevel="true" text="Setting">
 				<Size>
 					<AbsDimension x="60" y="25" />
 				</Size>
@@ -346,7 +346,7 @@
 					</EdgeSize>
 				</Backdrop>
 				<Frames>
-					<MessageFrame name="DefaultRecipientFrame" parent="" inherits="BackdropTemplate">
+					<MessageFrame name="DefaultReceiverFrame" parent="" inherits="BackdropTemplate">
 						<KeyValues>
 							<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
 							<KeyValue key="backdropColor" value="BLACK" type="global"/>
@@ -374,7 +374,7 @@
 						</Backdrop>
 						<Layers>
 							<Layer level="OVERLAY">
-								<FontString name="DefaultRecipient" inherits="GameFontNormal" text="Default recipient:">
+								<FontString name="DefaultReceiver" inherits="GameFontNormal" text="Default receiver:">
 									<Size>
 										<AbsDimension x="130" y="45" />
 									</Size>
@@ -455,13 +455,13 @@
 										<Offset>
 											<AbsDimension x="1" y="-1" />
 										</Offset>
-										<Color r="0" g="0" b="0" a="0" />
+									<Color r="0" g="0" b="0" a="0" />
 									</Shadow>
 								</FontString>
 							</Layer>
 						</Layers>
 					</MessageFrame>
-					<EditBox name="DefaultRecipientEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
+					<EditBox name="DefaultReceiverEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
 						<Size>
 							<AbsDimension x="90" y="30" />
 						</Size>

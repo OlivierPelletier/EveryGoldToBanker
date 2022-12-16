@@ -3,10 +3,10 @@
 
 local AddOns_name = "EveryGoldToBanker";
 
-RECEIVER = "No receiver";
+RECIPIENT = "No recipient";
 AMOUNT = 100;
 VISIBILITY = "show";
-EVERYGOLDTOBANKER_CONFIG2 = {RECEIVER,AMOUNT};
+EVERYGOLDTOBANKER_CONFIG2 = {RECIPIENT,AMOUNT};
 
 SlashCmdList["EGTB_TOGGLE"] = ToggleEGTBFrame;
 SLASH_EGTB_TOGGLE1 = "/egtb";
@@ -30,9 +30,9 @@ function EveryGoldToBankerCalculator_OnEvent(frame, event, firstArg, secondArg)
 				EveryGoldToBankerCalculator:Show();
 				SettingFrame:Hide();
 				AmountEditBox:SetNumber(EVERYGOLDTOBANKER_CONFIG2[2]);
-				ReceiverEditBox:SetText(EVERYGOLDTOBANKER_CONFIG2[1]);
+				RecipientEditBox:SetText(EVERYGOLDTOBANKER_CONFIG2[1]);
 				DefaultAmountEditBox:SetNumber(EVERYGOLDTOBANKER_CONFIG2[2]);
-				DefaultReceiverEditBox:SetText(EVERYGOLDTOBANKER_CONFIG2[1]);
+				DefaultRecipientEditBox:SetText(EVERYGOLDTOBANKER_CONFIG2[1]);
 			end
 		end		
 	elseif (event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" and firstArg == Enum.PlayerInteractionType.MailInfo) then
@@ -72,7 +72,7 @@ function SendButton_OnClick()
 	amountToKeep = AmountEditBox:GetNumber()*10000
 	amountInBag = GetMoney()
 	
-	tempReceiver = ReceiverEditBox:GetText()
+	tempRecipient = RecipientEditBox:GetText()
 	amountToSend = CalculateGoldToSend()
 	amountToSendConverted = Convert(amountToSend)	
 	
@@ -83,11 +83,11 @@ function SendButton_OnClick()
 	elseif (amountToSend < 0) then
 		Response:SetText("You don't have enough money.");
 	else
-		if (tempReceiver ~= "No receiver") then
+		if (tempRecipient ~= "No recipient") then
 			SetSendMailMoney(amountToSend);
-			SendMail(tempReceiver,"EveryGoldToBanker auto-send system.","");
+			SendMail(tempRecipient,"EveryGoldToBanker auto-send system.","");
 		else
-			Response:SetText("You didn't change the receiver name. CHANGE IT!");
+			Response:SetText("You didn't change the recipient name. CHANGE IT!");
 		end
 	end
 end
@@ -101,12 +101,12 @@ function SettingButton_OnClick()
 end
 
 function DoneSettingButton_OnClick()
-	defaultReceiver = DefaultReceiverEditBox:GetText();
+	defaultRecipient = DefaultRecipientEditBox:GetText();
 	defaultAmount = DefaultAmountEditBox:GetText();
-	EVERYGOLDTOBANKER_CONFIG2 = {defaultReceiver, defaultAmount};
+	EVERYGOLDTOBANKER_CONFIG2 = {defaultRecipient, defaultAmount};
 	
 	AmountEditBox:SetNumber(defaultAmount);
-	ReceiverEditBox:SetText(defaultReceiver);
+	RecipientEditBox:SetText(defaultRecipient);
 	
 	SettingFrame:Hide();
 end

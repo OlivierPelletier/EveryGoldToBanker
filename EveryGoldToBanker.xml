@@ -14,17 +14,6 @@
 				<Offset x="-25" y="1" />
 			</Anchor>
 		</Anchors>
-		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Gold-Border">
-			<BackgroundInsets>
-				<AbsInset left="11" right="12" top="42" bottom="11" />
-			</BackgroundInsets>
-			<TileSize>
-				<AbsValue val="32" />
-			</TileSize>
-			<EdgeSize>
-				<AbsValue val="32" />
-			</EdgeSize>
-		</Backdrop>
 		<Frames>
 			<MessageFrame name="TitleFrame" parent="" inherits="BackdropTemplate">
 				<KeyValues>
@@ -41,17 +30,6 @@
 						<Offset x="0" y="0" />
 					</Anchor>
 				</Anchors>
-				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Gold-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Gold-Border" tile="true">
-					<BackgroundInsets>
-						<AbsInset left="11" right="12" top="12" bottom="11" />
-					</BackgroundInsets>
-					<TileSize>
-						<AbsValue val="32" />
-					</TileSize>
-					<EdgeSize>
-						<AbsValue val="32" />
-					</EdgeSize>
-				</Backdrop>
 				<Layers>
 					<Layer level="OVERLAY">
 						<FontString name="Title" inherits="GameFontNormal" text="EveryGoldToBanker">
@@ -86,17 +64,6 @@
 						<Offset x="14" y="-41" />
 					</Anchor>
 				</Anchors>
-				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-					<BackgroundInsets>
-						<AbsInset left="11" right="12" top="12" bottom="11" />
-					</BackgroundInsets>
-					<TileSize>
-						<AbsValue val="32" />
-					</TileSize>
-					<EdgeSize>
-						<AbsValue val="32" />
-					</EdgeSize>
-				</Backdrop>
 				<Layers>
 					<Layer level="OVERLAY">
 						<FontString name="Amount" inherits="GameFontNormal" text="Amount desired to keep:">
@@ -128,17 +95,6 @@
 						<Offset x="34" y="-102" />
 					</Anchor>
 				</Anchors>
-				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-					<BackgroundInsets>
-						<AbsInset left="11" right="12" top="12" bottom="11" />
-					</BackgroundInsets>
-					<TileSize>
-						<AbsValue val="32" />
-					</TileSize>
-					<EdgeSize>
-						<AbsValue val="32" />
-					</EdgeSize>
-				</Backdrop>
 				<Layers>
 					<Layer level="OVERLAY">
 						<FontString name="Response" inherits="GameFontNormal" text="You didn't enter a value yet.">
@@ -155,7 +111,7 @@
 					</Layer>
 				</Layers>
 			</MessageFrame>
-			<MessageFrame name="ReceiverFrame" parent="" inherits="BackdropTemplate">
+			<MessageFrame name="RecipientFrame" parent="" inherits="BackdropTemplate">
 				<KeyValues>
 					<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
 					<KeyValue key="backdropColor" value="BLACK" type="global"/>
@@ -170,20 +126,9 @@
 						<Offset x="14" y="-151" />
 					</Anchor>
 				</Anchors>
-				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-					<BackgroundInsets>
-						<AbsInset left="11" right="12" top="12" bottom="11" />
-					</BackgroundInsets>
-					<TileSize>
-						<AbsValue val="32" />
-					</TileSize>
-					<EdgeSize>
-						<AbsValue val="32" />
-					</EdgeSize>
-				</Backdrop>
 				<Layers>
 					<Layer level="OVERLAY">
-						<FontString name="Receiver" inherits="GameFontNormal" text="Receiver name:">
+						<FontString name="Recipient" inherits="GameFontNormal" text="Recipient name:">
 							<Size>
 								<AbsDimension x="145" y="45" />
 							</Size>
@@ -241,7 +186,7 @@
 					<OnEnterPressed function="CheckButton_OnClick" />
 				</Scripts>
 			</EditBox>
-			<EditBox name="ReceiverEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
+			<EditBox name="RecipientEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
 				<Size>
 					<AbsDimension x="90" y="30" />
 				</Size>
@@ -334,19 +279,8 @@
 						<Offset x="15" y="-219" />
 					</Anchor>
 				</Anchors>
-				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Gold-Border" tile="true">
-					<BackgroundInsets>
-						<AbsInset left="11" right="12" top="12" bottom="11" />
-					</BackgroundInsets>
-					<TileSize>
-						<AbsValue val="32" />
-					</TileSize>
-					<EdgeSize>
-						<AbsValue val="32" />
-					</EdgeSize>
-				</Backdrop>
 				<Frames>
-					<MessageFrame name="DefaultReceiverFrame" parent="" inherits="BackdropTemplate">
+					<MessageFrame name="DefaultRecipientFrame" parent="" inherits="BackdropTemplate">
 						<KeyValues>
 							<KeyValue key="backdropInfo" value="BACKDROP_GOLD_DIALOG_32_32" type="global"/>
 							<KeyValue key="backdropColor" value="BLACK" type="global"/>
@@ -361,20 +295,9 @@
 								<Offset x="12" y="-12" />
 							</Anchor>
 						</Anchors>
-						<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-							<BackgroundInsets>
-								<AbsInset left="11" right="12" top="12" bottom="11" />
-							</BackgroundInsets>
-							<TileSize>
-								<AbsValue val="32" />
-							</TileSize>
-							<EdgeSize>
-								<AbsValue val="32" />
-							</EdgeSize>
-						</Backdrop>
 						<Layers>
 							<Layer level="OVERLAY">
-								<FontString name="DefaultReceiver" inherits="GameFontNormal" text="Default receiver:">
+								<FontString name="DefaultRecipient" inherits="GameFontNormal" text="Default recipient:">
 									<Size>
 										<AbsDimension x="130" y="45" />
 									</Size>
@@ -403,17 +326,6 @@
 								<Offset x="12" y="-54" />
 							</Anchor>
 						</Anchors>
-						<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-							<BackgroundInsets>
-								<AbsInset left="11" right="12" top="12" bottom="11" />
-							</BackgroundInsets>
-							<TileSize>
-								<AbsValue val="32" />
-							</TileSize>
-							<EdgeSize>
-								<AbsValue val="32" />
-							</EdgeSize>
-						</Backdrop>
 						<Layers>
 							<Layer level="OVERLAY">
 								<FontString name="DefaultAmount" inherits="GameFontNormal" text="Default amount:">
@@ -461,7 +373,7 @@
 							</Layer>
 						</Layers>
 					</MessageFrame>
-					<EditBox name="DefaultReceiverEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
+					<EditBox name="DefaultRecipientEditBox" inherits="InputBoxTemplate" toplevel="true" autoFocus="false">
 						<Size>
 							<AbsDimension x="90" y="30" />
 						</Size>

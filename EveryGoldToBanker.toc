@@ -2,7 +2,7 @@
 ## Interface: 100005
 ## Notes: Useful tool to send money to your banker.
 ## Title: [EGTB] EveryGoldToBanker
-## Version: 1.0.12
+## Version: 1.1.3
 ##SavedVariablesPerCharacter: EVERYGOLDTOBANKER_CONFIG2
 EveryGoldToBanker.xml
 EveryGoldToBanker.lua
